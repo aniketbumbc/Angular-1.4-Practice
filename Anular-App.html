@@ -1,18 +1,18 @@
 <!doctype html>
-<html>
-    <head>
-        <title>Angular App</title> 
-        <script src="./angular.min.js"></script>
-        <link href="./style.css"  rel="stylesheet" type="text/css">
-    </head>
-    <body>
+<html ng-app>
+<head>
+    <title>Angular App</title>
+    <script src="./angular.min.js"></script>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+</head>
 
+<body ng-init="names=['Don','Mike','Yahoo','Donny']">
+    <input type="text" ng-model="name" placeholder="Name">
+    <p class="red">Name is {{name}}</p>
 
-
-
-
-
-
-
-    </body>
+    <ul>
+        <li ng-repeat=" aname in names ">{{ aname }}</li>
+      
+    </ul>
+</body>
 </html>
