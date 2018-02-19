@@ -1,4 +1,16 @@
-var myApp = angular.module("myApp", []);
+var myApp = angular.module("myApp", ['ngRoute']);
+myApp.config(['$routeProvider',function($routeProvider){
+$routeProvider
+.when('/Home',{
+    templateUrl:'./views/Home.html'
+})
+.when('/directory',{
+    templateUrl:'./views/directory.html',
+    controller:'MyappController'
+}).otherwise({
+    redirectTo:'/Home'
+});
+}]);
 
 myApp.config(function () { });
 myApp.run(function () { });
