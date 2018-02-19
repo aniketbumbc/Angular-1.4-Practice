@@ -6,31 +6,40 @@ myApp.run(function(){});
 myApp.controller('MyappController', ['$scope', function($scope){
 
     $scope.message="Hello All how's you";
+    $scope.removeList=function(name){
+        var removeName = $scope.names.indexOf(name);
+        $scope.names.splice(removeName,1);
+    };
     $scope.names=[
         {
-            name:'Aniket',
-            color:'green',
-            rate:23
+            name:'zAniket',
+            color:'yellow',
+            rate:23,
+            available:true
         },
         {
             name:'Bunny',
             color:'red',
             rate:54,
+            available:true
         },
         {
             name:'Don',
             color:'blue',
-            rate:10
+            rate:10,
+            available:false
         },
         {
             name:'Mike',
             color:'orange',
-            rate:73
+            rate:73,
+            available:false
         },
         {
             name:'zeong',
-            color:'yellow',
-            rate:80
+            color:'green',
+            rate:80,
+            available:true
         },
     ];
 

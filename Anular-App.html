@@ -10,15 +10,20 @@
 
 <body>
     <header ng-include="'header.html'"></header>
-    <div ng-controller="MyappController">
-        <input type="text" ng-model="search" />
-        <p>{{message}}</p>
-        <ul>
-            <li ng-repeat="name in names| orderBy:'-name'| filter:search">{{name.name}} - {{name.rate | currency}}
-            </li>
-        </ul>
+    <div class="content">
+        <div ng-controller="MyappController">
+            <button ng-click=" order = 'name' ">Order by Name</button>
+            <button ng-click= "order = 'color' ">Order by Color</button>
+            <input type="text" ng-model="search"  placeholder="search name"/>
+            <p>{{message}}</p>
+            <ul>
+                <li ng-repeat="name in names| orderBy : order | filter:search"  ng-show="name.available">
+                    <h3> {{name.name}} - {{name.rate | currency}}  </h3>
+                    <div class="remove" ng-click="removeList(name)">X</div>
+                    <span class= "belt" style = "background: {{name.color}} " >{{name.color}} Color </span>
+                </li>
+            </ul>
+        </div>
     </div>
-
 </body>
-
 </html>
