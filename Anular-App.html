@@ -17,7 +17,8 @@
             <p>{{message}}</p>
             <ul>
                 <li ng-repeat="name in names| orderBy : order | filter:search"  ng-show="name.available">
-                    <h3> {{name.name}} - {{name.rate | currency}}  </h3>
+                    <img ng-src={{name.thumb}} style="margin: -12px 10 0 0; float:left; width:40px;" ng-show="name.thumb"/> &nbsp; &nbsp;
+                    <h3>  {{name.name}} - {{name.rate | currency}}  </h3>
                     <div class="remove" ng-click="removeList(name)">X</div>
                     <span class= "belt" style = "background: {{name.color}} " >{{name.color}} Color </span>
                 </li>

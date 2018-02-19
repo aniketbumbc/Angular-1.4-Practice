@@ -28,31 +28,36 @@ myApp.controller('MyappController', ['$scope', function ($scope) {
             name: 'zAniket',
             color: 'yellow',
             rate: 23,
-            available: true
+            available: true,
+            thumb:"./checkimage.png"
         },
         {
             name: 'Bunny',
             color: 'red',
             rate: 54,
-            available: true
+            available: true,
+            thumb:"./checkimage.png"
         },
         {
             name: 'Don',
             color: 'blue',
             rate: 10,
-            available: false
+            available: false,
+            thumb:"./checkimage.png"
         },
         {
             name: 'Mike',
             color: 'orange',
             rate: 73,
-            available: false
+            available: false,
+            thumb:"./checkimage.png"
         },
         {
             name: 'zeong',
             color: 'green',
             rate: 80,
-            available: true
+            available: true,
+            thumb:"./checkimage.png"
         },
     ];
 
