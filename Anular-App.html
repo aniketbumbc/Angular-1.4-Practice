@@ -1,6 +1,5 @@
 <!doctype html>
 <html ng-app="myApp">
-
 <head>
     <title>Angular App</title>
     <script src="./angular.min.js"></script>
@@ -23,6 +22,12 @@
                     <span class= "belt" style = "background: {{name.color}} " >{{name.color}} Color </span>
                 </li>
             </ul>
+            <form ng-submit="addName()">
+                <input type="text" placeholder="name" ng-model="newname.name"/>
+                <input type="text" placeholder="color" ng-model="newcolor.color"/>
+                <input type="text" placeholder="rate" ng-model="newrate.rate"/>
+                <input type="submit" value="Add Value">
+            </form>
         </div>
     </div>
 </body>
