@@ -1,11 +1,12 @@
 var myApp = angular.module("myApp", ['ngRoute']);
 myApp.config(['$routeProvider',function($routeProvider){
+
 $routeProvider
 .when('/Home',{
     templateUrl:'./views/Home.html'
 })
-.when('/directory',{
-    templateUrl:'./views/directory.html',
+.when('/Directory',{
+    templateUrl:'./views/Directory.html',
     controller:'MyappController'
 }).otherwise({
     redirectTo:'/Home'
