@@ -9,23 +9,28 @@ myApp.controller('MyappController', ['$scope', function($scope){
     $scope.names=[
         {
             name:'Aniket',
-            color:'green'
+            color:'green',
+            rate:23
         },
         {
             name:'Bunny',
-            color:'red'
+            color:'red',
+            rate:54,
         },
         {
             name:'Don',
-            color:'blue'
+            color:'blue',
+            rate:10
         },
         {
             name:'Mike',
-            color:'orange'
+            color:'orange',
+            rate:73
         },
         {
             name:'zeong',
-            color:'yellow'
+            color:'yellow',
+            rate:80
         },
     ];
 
