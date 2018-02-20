@@ -7,15 +7,12 @@ $routeProvider
 .when('/Contact',{templateUrl:'./views/Contact.html'})
 .otherwise({redirectTo:'/Home'});
 }]);
-
 myApp.controller('MyappController', ['$scope', function ($scope) {
-
     $scope.message = "Hello All how's you";
     $scope.removeList = function (name) {
         var removeName = $scope.names.indexOf(name);
         $scope.names.splice(removeName, 1);
     };
-
     $scope.addName = function () {
         $scope.names.push({
             name: $scope.newname.name,
