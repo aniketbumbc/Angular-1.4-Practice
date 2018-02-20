@@ -1,6 +1,5 @@
 var myApp = angular.module("myApp", ['ngRoute']);
 myApp.config(['$routeProvider',function($routeProvider){
-
 $routeProvider
 .when('/Home',{templateUrl:'./views/Home.html'})
 .when('/Directory',{templateUrl:'./views/Directory.html', controller:'MyappController'})
@@ -24,7 +23,6 @@ myApp.controller('MyappController', ['$scope', function ($scope) {
         $scope.newcolor.color="";
         $scope.newrate.rate="";
     };
-
     $scope.names = [
         {
             name: 'zAniket',
