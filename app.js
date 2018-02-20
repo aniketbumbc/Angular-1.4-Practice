@@ -6,7 +6,7 @@ $routeProvider
 .when('/Contact',{templateUrl:'./views/Contact.html'})
 .otherwise({redirectTo:'/Home'});
 }]);
-myApp.controller('MyappController', ['$scope', function ($scope) {
+myApp.controller('MyappController', ['$scope','$http',function ($scope,$http) {
     $scope.message = "Hello All how's you";
     $scope.removeList = function (name) {
         var removeName = $scope.names.indexOf(name);
@@ -23,44 +23,8 @@ myApp.controller('MyappController', ['$scope', function ($scope) {
         $scope.newcolor.color="";
         $scope.newrate.rate="";
     };
-    $scope.names = [
-        {
-            name: 'zAniket',
-            color: 'yellow',
-            rate: 23,
-            available: true,
-            thumb:"./checkimage.png"
-        },
-        {
-            name: 'Bunny',
-            color: 'red',
-            rate: 54,
-            available: true,
-            thumb:"./checkimage.png"
-        },
-        {
-            name: 'Don',
-            color: 'blue',
-            rate: 10,
-            available: false,
-            thumb:"./checkimage.png"
-        },
-        {
-            name: 'Mike',
-            color: 'orange',
-            rate: 73,
-            available: false,
-            thumb:"./checkimage.png"
-        },
-        {
-            name: 'zeong',
-            color: 'green',
-            rate: 80,
-            available: true,
-            thumb:"./checkimage.png"
-        },
-    ];
-console.log(angular.toJson($scope.names));
-
-
+    $http.get('./views/data/names.json').then(function(response){
+        $scope.names = response.data;
+  });
+  
 }]);
