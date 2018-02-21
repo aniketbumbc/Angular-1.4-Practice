@@ -3,7 +3,7 @@ myApp.config(['$routeProvider',function($routeProvider){
 $routeProvider
 .when('/Home',{templateUrl:'./views/Home.html'})
 .when('/Directory',{templateUrl:'./views/Directory.html',controller:"MyappController"})
-.when('/Contact',{templateUrl:'./views/Contact.html'})
+.when('/Contact',{templateUrl:'./views/Contact.html',controller:"MyappController"})
 .otherwise({redirectTo:'/Home'});
 }]);
 myApp.controller('MyappController', ['$scope','$http',function ($scope,$http) {
@@ -23,6 +23,9 @@ myApp.controller('MyappController', ['$scope','$http',function ($scope,$http) {
         $scope.newcolor.color="";
         $scope.newrate.rate="";
     };
+    $scope.sendFeedback=function(){
+        alert("Feedback Send");
+    }
     $http.get('./views/data/names.json').then(function(response){
         $scope.names = response.data;
   });
