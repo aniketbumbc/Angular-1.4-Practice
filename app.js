@@ -1,11 +1,39 @@
 var myApp = angular.module("myApp", ['ngRoute']);
 myApp.config(['$routeProvider',function($routeProvider){
 $routeProvider
-.when('/Home',{templateUrl:'./views/Home.html'})
+.when('/Home',{templateUrl:'./views/Home.html',controller:"MyappController"})
 .when('/Directory',{templateUrl:'./views/Directory.html',controller:"MyappController"})
 .when('/Contact',{templateUrl:'./views/Contact.html',controller:"MyappController"})
 .otherwise({redirectTo:'/Home'});
 }]);
+
+myApp.directive('randomNinja',[function(){
+    return {
+restrict:'E',
+scope:{
+    names:'=',
+    title:'='
+},
+template:'<img ng-src=" {{names[random].thumb}}">',
+controller:function($scope){
+    $scope.random = Math.floor(Math.random()*4);
+}
+  };
+
+}]);
+
+
+
+
+//'<img ng-src= "{{names[1].thumb}}">',
+
+
+
+
+
+
+
+
 myApp.controller('MyappController', ['$scope','$http',function ($scope,$http) {
     $scope.message = "Hello All how's you";
     $scope.removeList = function (name) {
@@ -29,5 +57,5 @@ myApp.controller('MyappController', ['$scope','$http',function ($scope,$http) {
     $http.get('./views/data/names.json').then(function(response){
         $scope.names = response.data;
   });
-  
+
 }]);
