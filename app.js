@@ -14,7 +14,7 @@ scope:{
     names:'=',
     title:'='
 },
-template:'<img ng-src=" {{names[random].thumb}}">',
+templateUrl:"./views/random.html",
 controller:function($scope){
     $scope.random = Math.floor(Math.random()*4);
 }
