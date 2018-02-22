@@ -3,7 +3,8 @@ myApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/Home', { templateUrl: './views/Home.html', controller: "MyappController" })
         .when('/Directory', { templateUrl: './views/Directory.html', controller: "MyappController" })
-        .when('/Contact', { templateUrl: './views/Contact.html', controller: "MyappController" })
+        .when('/Contact', { templateUrl: './views/Contact.html', controller: "ContactController" })
+        .when('/Contact-success', { templateUrl: './views/Contact-success.html', controller: "ContactController" })
         .otherwise({ redirectTo: '/Home' });
 }]);
 myApp.directive('randomNinja', [function () {
@@ -37,9 +38,6 @@ myApp.controller('MyappController', ['$scope', '$http', function ($scope, $http)
         $scope.newcolor.color = "";
         $scope.newrate.rate = "";
     };
-    $scope.sendFeedback = function () {
-        alert("Feedback Send");
-    }
     $scope.removeAll=function(){
 
         $scope.names=[];
@@ -48,5 +46,13 @@ myApp.controller('MyappController', ['$scope', '$http', function ($scope, $http)
     $http.get('./views/data/names.json').then(function (response) {
         $scope.names = response.data;
     });
+
+}]);
+
+myApp.controller('ContactController' ,[ '$scope', '$location', function ($scope,$location){
+   
+    $scope.sendFeedback = function () {
+        $location.path('/Contact-success');
+    }
 
 }]);
