@@ -3,13 +3,17 @@
     <form name="contactform" ng-submit="sendFeedback()" novalidate >
     <span> Name </span>
     <input type="text" placeholder="Name" ng-required="true" ng-model="contact.name">
+    <div ng-show="contactform.name.$touched && contactform.name.$invalid">
+            <small style="color:red;display:block;text-align:center">Enter a valid name</small>
+    </div>
     <br>
     <br>
     <span> Email Id </span>
     <input type="email" placeholder="Email"  ng-required="true" ng-model="contact.email">
+   
     <br>
     <span> Comment</span>  
-   <textarea placeholder="Your message" name="message" ng-model="contact.comment"></textarea>
-    <input type="submit" value="Send Feedback">
+   <input type ="textarea" placeholder="Your message" name="message" ng-model="contact.comment">
+    <input type="submit" value="Send Feedback" ng-disabled="contactform.$invalid">
     </form>
 </div>
