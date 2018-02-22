@@ -1,17 +1,15 @@
 <div class="content">
-    <h1 align="center">Feedback</h1>
-    <br>
-    <form ng-submit="sendFeedback()">
+   
+    <form name="contactform" ng-submit="sendFeedback()" novalidate >
     <span> Name </span>
-    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Name" ng-required="true" ng-model="contact.name">
     <br>
     <br>
     <span> Email Id </span>
-    <input type="email" placeholder="Email">
+    <input type="email" placeholder="Email"  ng-required="true" ng-model="contact.email">
     <br>
-    <br>
-    <span> Comment</span>
-    <input type="text" placeholder="Comment">
+    <span> Comment</span>  
+   <textarea placeholder="Your message" name="message" ng-model="contact.comment"></textarea>
     <input type="submit" value="Send Feedback">
     </form>
 </div>
