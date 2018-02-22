@@ -40,6 +40,11 @@ myApp.controller('MyappController', ['$scope', '$http', function ($scope, $http)
     $scope.sendFeedback = function () {
         alert("Feedback Send");
     }
+    $scope.removeAll=function(){
+
+        $scope.names=[];
+
+    };
     $http.get('./views/data/names.json').then(function (response) {
         $scope.names = response.data;
     });
