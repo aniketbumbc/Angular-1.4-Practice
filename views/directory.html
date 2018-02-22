@@ -4,7 +4,7 @@
     <button ng-click="order = 'color' ">Order by Color</button>
     <input type="text" ng-model="search" placeholder="search name" />
     <p>{{message}}</p>
-    <ul>
+    <ul id="names-list">
         <li ng-repeat="name in names| orderBy : order | filter:search" ng-show="name.available">
             <img ng-src={{name.thumb}} style="margin: -12px 10 0 0; float:left; width:40px;" ng-show="name.thumb" /> &nbsp; &nbsp;
             <h3> {{name.name}} - {{name.rate | currency}} </h3>

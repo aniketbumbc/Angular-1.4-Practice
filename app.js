@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp", ['ngRoute']);
+var myApp = angular.module("myApp", ['ngRoute','ngAnimate']);
 myApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/Home', { templateUrl: './views/Home.html', controller: "MyappController" })
